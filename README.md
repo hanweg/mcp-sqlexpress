@@ -66,9 +66,9 @@ For SQL Server Authentication:
 ## Features
 
 ### Tools
+- `get_allowed_databases`: Get list of databases that are allowed to be accessed
 - `read_query`: Execute SELECT queries
 - `write_query`: Execute INSERT/UPDATE/DELETE queries
 - `create_table`: Create new tables
 - `list_tables`: List all tables in database
 - `describe_table`: Show table schema
-- `append_insight`: Add business insights to memo
