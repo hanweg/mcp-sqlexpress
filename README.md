@@ -34,7 +34,7 @@ Add to your `claude_desktop_config.json`:
             "command": "uv",
             "args": [
                 "--directory",
-                "PATH\\TO\\PROJECT\\sqlexpress",
+                "PATH\\TO\\PROJECT\\mcp-sqlexpress",
                 "run",
                 "mcp-server-sqlexpress",
                 "--server",
