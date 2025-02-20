@@ -1,0 +1,33 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - serverInstance
+      - authMethod
+      - allowedDatabases
+    properties:
+      serverInstance:
+        type: string
+        description: The server instance to connect to.
+      authMethod:
+        type: string
+        description: The authentication method to use.
+      username:
+        type: string
+        default: ""
+        description: The username for SQL Server authentication.
+      password:
+        type: string
+        default: ""
+        description: The password for SQL Server authentication.
+      allowedDatabases:
+        type: string
+        description: Comma-separated list of databases that are allowed to be accessed.
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    (config) => { return { command: 'uv', args: ['--directory', '.', 'run', 'mcp-server-sqlexpress', '--server', config.serverInstance, '--auth', config.authMethod, ...(config.authMethod === 'sql' ? ['--username', config.username, '--password', config.password] : ['--trusted-connection', 'yes']), '--trust-server-certificate', 'yes', '--allowed-databases', config.allowedDatabases ] } }
