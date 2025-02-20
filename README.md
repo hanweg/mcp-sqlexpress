@@ -2,6 +2,8 @@
 
 An MCP server for interacting with Microsoft SQL Server Express. Supports Windows and SQL Server authentication.
 
+[![smithery badge](https://smithery.ai/badge/@hanweg/mcp-sqlexpress)](https://smithery.ai/server/@hanweg/mcp-sqlexpress)
+
 ## Prerequisites
 
 - Python 3.10 or higher
@@ -10,6 +12,15 @@ An MCP server for interacting with Microsoft SQL Server Express. Supports Window
 
 ## Installation
 
+### Installing via Smithery
+
+To install SQL Server Express MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@hanweg/mcp-sqlexpress):
+
+```bash
+npx -y @smithery/cli install @hanweg/mcp-sqlexpress --client claude
+```
+
+### Manually
 Clone this repo
 
 ```powershell
